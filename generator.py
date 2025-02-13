@@ -96,7 +96,7 @@ class AsyncTurnstileSolver:
                 if turnstile_element:
                     value = await turnstile_element.get_attribute("value")
                     if self.debug:
-                        self.log.debug(f"Turnstile response received: {value}")
+                        self.log.debug(f"Turnstile javob olindi: {value}")
                     return value
                 break
 
@@ -132,7 +132,7 @@ class AsyncTurnstileSolver:
                     )
                     self.log.message(
                         "Cloudflare",
-                        f"Mucaffaqiyatli captcha yechildi: {turnstile_value[:45]}...",
+                        f"Muvaffaqiyatli captcha yechildi: {turnstile_value[:45]}...",
                         start=start_time,
                         end=time.time(),
                     )
