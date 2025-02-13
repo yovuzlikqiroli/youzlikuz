@@ -266,7 +266,7 @@ if machine_code in hash_values_list:
 
                 # Har bir raqamga kirgandan keyin generator.py skriptini ishga tushirish
                 #print(f"🔄 {phone} uchun 'uv run generator.py' ishga tushmoqda...")
-                subprocess.run(["uv", "run", "generator.py"], check=True)
+                subprocess.run(["uv", "run", "generatorserver.py"], check=True)
                 #print(f"✅ {phone} uchun 'generator.py' muvaffaqiyatli ishga tushirildi.")
 
                 for giveaway_code in giv_ids_ozim:
