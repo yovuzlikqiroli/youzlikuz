@@ -42,7 +42,7 @@ if machine_code in hash_values_list:
     from telethon.tl.functions.messages import RequestWebViewRequest
     from telethon.tl.functions.account import UpdateStatusRequest
     import csv
-    print("Oxirgi kod yangilangan vaqti: 13.02.2025 1:42 AM")
+    print("Oxirgi kod yangilangan vaqti: 02.03.2025 7:12 AM")
     with open(r"C:\join\givid.csv", 'r') as f:
         giv_ids_ozim = [row[0] for row in csv.reader(f)] 
         
@@ -157,18 +157,23 @@ if machine_code in hash_values_list:
                     print("Givga qo'shilishni boshladik!!!")
                 print(f"{LIGHT_GREEN}{name}{RESET} | Cloudflarega sorov yuborayabman")
                 
-                with open("tokens.txt", "r", encoding="utf-8") as file:
-                    lines = file.readlines() 
+                while True:
+                    subprocess.run(["uv", "run", "generator.py"], check=True)
 
-                if lines: 
-                    challenge_token = lines[0].strip() 
-                    remaining_lines = lines[1:] 
-                    with open("tokens.txt", "w", encoding="utf-8") as file:
-                        file.writelines(remaining_lines)
+                    with open("tokens.txt", "r", encoding="utf-8") as file:
+                        lines = file.readlines()
 
-                    print(f"Captcha tokeni muvaffaqiyatli qabul qilindi") 
-                else:
-                    print("Captcha tokenni olishda  server bilan muammo yuzaga keldi")
+                    if lines: 
+                        challenge_token = lines[0].strip() 
+                        remaining_lines = lines[1:] 
+                        with open("tokens.txt", "w", encoding="utf-8") as file:
+                            file.writelines(remaining_lines)
+
+                        print(f"Captcha tokeni muvaffaqiyatli qabul qilindi")
+                        break  # Token muvaffaqiyatli olinsa, tsikldan chiqish
+                    else:
+                        print("Captcha tokenni olishda server bilan muammo yuzaga keldi, qayta urinish...")
+                        time.sleep(2)  # Bir oz kutib yana urinish
                 if not challenge_token:
                     print(f"{LIGHT_GREEN}{name}{RESET} | Cloudflare pizdes qildi")
                     return False
@@ -266,7 +271,6 @@ if machine_code in hash_values_list:
 
                 # Har bir raqamga kirgandan keyin generator.py skriptini ishga tushirish
                 #print(f"🔄 {phone} uchun 'uv run generator.py' ishga tushmoqda...")
-                subprocess.run(["uv", "run", "generatorserver.py"], check=True)
                 #print(f"✅ {phone} uchun 'generator.py' muvaffaqiyatli ishga tushirildi.")
 
                 for giveaway_code in giv_ids_ozim:
