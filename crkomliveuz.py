@@ -158,7 +158,7 @@ if machine_code in hash_values_list:
                 print(f"{LIGHT_GREEN}{name}{RESET} | Cloudflarega sorov yuborayabman")
                 
                 while True:
-                    subprocess.run(["uv", "run", "generator.py"], check=True)
+                    subprocess.run(["uv", "run", "generatorserver.py"], check=True)
 
                     with open("tokens.txt", "r", encoding="utf-8") as file:
                         lines = file.readlines()
