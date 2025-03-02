@@ -4,7 +4,7 @@ from licensing.models import *
 from licensing.methods import Key, Helpers
 import subprocess
 # GitHub repository URL
-url = "https://raw.githubusercontent.com/mabbsolute/tgs/refs/heads/main/requestcr.csv"
+url = "https://raw.githubusercontent.com/Enshteyn40/crdevice/refs/heads/main/crbezcaptcha.csv"
 
 # URL dan CSV faylni yuklab olish
 response = requests.get(url)
