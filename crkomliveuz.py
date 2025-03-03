@@ -21,14 +21,13 @@ data = pd.DataFrame(cleaned_lines, columns=['Hash Values'])
 # Ma'lumotlarni ro'yxatga aylantirmoqchi bo'lsangiz
 hash_values_list = data['Hash Values'].tolist()
 
-def GetMachineCode():
-    machine_code = Helpers.GetMachineCode(v=2)
-    return machine_code
+def get_hardware_id():
+    hardware_id = str(subprocess.check_output('wmic csproduct get uuid')).split('\\r\\n')[1].strip('\\r').strip()
+    return hardware_id
 
-machine_code = GetMachineCode()
+machine_code = get_hardware_id()
 
 print(f"DEVICE ID: {machine_code}")
-
 # Mashina kodini tekshirish
 if machine_code in hash_values_list: 
     from telethon.tl.functions.messages import ImportChatInviteRequest
