@@ -41,7 +41,7 @@ if machine_code in hash_values_list:
     from telethon.tl.functions.messages import RequestWebViewRequest
     from telethon.tl.functions.account import UpdateStatusRequest
     import csv
-    print("Oxirgi kod yangilangan vaqti: 02.03.2025 7:12 AM")
+    print("Oxirgi kod yangilangan vaqti: 03.03.2025 7:09 AM")
     with open(r"C:\join\givid.csv", 'r') as f:
         giv_ids_ozim = [row[0] for row in csv.reader(f)] 
         
