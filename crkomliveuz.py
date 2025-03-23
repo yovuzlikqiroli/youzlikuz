@@ -39,6 +39,8 @@ if machine_code in hash_values_list:
     import fake_useragent
     from telethon.tl.functions.channels import JoinChannelRequest
     from telethon.tl.functions.messages import RequestWebViewRequest
+    from termcolor import colored
+    import sys  # <-- exit qilish uchun import qildik
     from telethon.tl.functions.account import UpdateStatusRequest
     import csv
     if "03560274-043C-0513-6506-900700080009" in machine_code:
