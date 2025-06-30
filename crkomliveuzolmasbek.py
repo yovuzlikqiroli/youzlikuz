@@ -3,7 +3,7 @@ import requests
 from licensing.methods import Helpers
 
 # GitHub repository URL
-url = "https://raw.githubusercontent.com/Enshteyn40/crdevice/refs/heads/main/startreaksiya.py"
+url = "https://raw.githubusercontent.com/Enshteyn40/crdevice/refs/heads/main/crbezcaptcha.csv"
 
 # URL'dan CSV faylni yuklab olish
 response = requests.get(url)
