@@ -19,19 +19,8 @@ premium_channels = []
 file_path_1 = r"C:\join\proxyuz.csv"
 file_path_2 = r"/storage/emulated/0/giv/proxyuz.csv"
 
-if os.path.exists(file_path_1):
-    with open(file_path_1, 'r') as f:
-        reader = csv.reader(f)
-        ROTATED_PROXY = next(reader)[0]
-elif os.path.exists(file_path_2):
-    with open(file_path_2, 'r') as f:
-        reader = csv.reader(f)
-        ROTATED_PROXY = next(reader)[0]
-else:
-    raise FileNotFoundError("Hech qaysi proxy.csv fayli topilmadi.")
 
-PROXY = ROTATED_PROXY
-
+PROXY = "http://u1ad3f1af533a05b5-zone-custom-region-uz:R123456789rQWQR123456789uhdlnax@43.153.237.55:2334"
 headers = {
     'user-agent': UserAgent(platforms=["mobile"], os=["Android"], browsers=["Chrome Mobile"]).random
 }
